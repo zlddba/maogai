@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红色人物志 - 革命精神永传承</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "宋体", SimSun, serif;
+        }
+
+        /* 配色方案 */
+        :root {
+            --primary-red: #c7000a;  /* 主红色 */
+            --dark-red: #8b0000;    /* 深红色 */
+            --gold: #ffd700;       /* 金色 */
+            --light-gray: #f5f5f5;
+        }
+
+        body {
+            background: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        /* 头部样式 */
+        .header {
+            background: var(--primary-red);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 导航栏 */
+        .nav-bar {
+            background: var(--dark-red);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary-red);
+        }
+
+        /* 主要内容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* 革命领袖纪念馆 */
+        .memorial-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: var(--dark-red);
+            border-left: 5px solid var(--primary-red);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* 领袖卡片 */
+        .leader-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        .leader-img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .leader-info h3 {
+            color: var(--dark-red);
+            margin-bottom: 1rem;
+        }
+
+        /* 英烈数据库 */
+        .database-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .martyr-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .martyr-item {
+            padding: 1rem;
+            border-left: 4px solid var(--primary-red);
+            background: #fffafa;
+            transition: transform 0.2s;
+        }
+
+        .martyr-item:hover {
+            transform: translateX(5px);
+        }
+
+        .martyr-name {
+            color: var(--dark-red);
+            margin-bottom: 0.5rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .leader-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>红色精神永放光芒</h1>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="#memorial">数字纪念馆</a>
+            <a href="#database">英烈数据库</a>
+            <a href="#stories">红色故事</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 革命领袖数字纪念馆 -->
+        <section id="memorial" class="memorial-section">
+            <h2 class="section-title">
+                <i class="fas fa-monument"></i> 革命领袖数字纪念馆
+            </h2>
+            
+            <div class="leader-card">
+                <img src="leader-placeholder.jpg" alt="革命领袖" class="leader-img">
+                <div class="leader-info">
+                    <h3>毛泽东</h3>
+                    <p>伟大的无产阶级革命家、战略家和理论家，中国共产党、中国人民解放军和中华人民共和国的主要创立者...</p>
+                    <p><strong>主要事迹：</strong>领导秋收起义、建立井冈山革命根据地、指挥长征、建立新中国等</p>
+                    <p class="quote">"为人民服务"</p>
+                </div>
+            </div>
+
+            <!-- 更多领袖卡片 -->
+        </section>
+
+        <!-- 英烈事迹数据库 -->
+        <section id="database" class="database-section">
+            <h2 class="section-title">
+                <i class="fas fa-database"></i> 英烈事迹数据库
+            </h2>
+            
+            <div class="martyr-list">
+                <div class="martyr-item">
+                    <h3 class="martyr-name">方志敏（1899-1935）</h3>
+                    <p>无产阶级革命家、军事家，创建赣东北革命根据地，1935年8月6日英勇就义...</p>
+                </div>
+
+                <div class="martyr-item">
+                    <h3 class="martyr-name">杨靖宇（1905-1940）</h3>
+                    <p>东北抗日联军主要创建者和领导人，1940年2月23日壮烈牺牲，时年35岁...</p>
+                </div>
+
+                <!-- 更多英烈条目 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer style="background: var(--dark-red); color: white; text-align: center; padding: 1rem;">
+        <p>版权所有 © 2023 红色文化传承网</p>
+        <p>联系电话：010-12345678</p>
+    </footer>
+</body>
+</html>

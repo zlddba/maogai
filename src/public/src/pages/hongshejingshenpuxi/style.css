@@ -1,0 +1,174 @@
+/* 全局样式 */
+:root {
+  --primary-red: #d32f2f;
+  --dark-red: #b71c1c;
+  --light-red: #ffebee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Microsoft YaHei", sans-serif; */
+}
+
+/* 时间轴容器 */
+.timeline-container {
+  max-width: 1200px;
+  margin: 100px auto 50px;
+  padding: 0 20px;
+}
+
+/* 时间轴 */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+/* 时间轴线 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-red);
+  transform: translateX(-50%);
+}
+
+/* 时间节点 */
+.timeline-node {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.timeline-node:nth-child(even) {
+  margin-left: auto;
+}
+
+.timeline-node::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  top: 30px;
+}
+
+.timeline-node:nth-child(odd)::before {
+  right: -35px;
+}
+
+.timeline-node:nth-child(even)::before {
+  left: -35px;
+}
+
+.timeline-node.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 节点内容 */
+.node-content h2 {
+  color: var(--dark-red);
+  margin-bottom: 10px;
+}
+
+.node-time {
+  background: var(--light-red);
+  color: var(--dark-red);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* 故事卡片区 */
+.stories-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.story-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px #ff000043;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px #ff000085;
+}
+
+.story-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-node {
+    width: 90%;
+    margin-left: 10% !important;
+  }
+
+  .timeline-node::before {
+    left: -25px !important;
+    right: auto;
+  }
+}
+
+/* 精神了解更多 */
+#jingshenMoreBox {
+  height: max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+#jingshenMore {
+  background-color: #00000000;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  color: #d32f2f;
+  font-weight: bolder;
+  border: 2px #d32f2f6b solid;
+  border-radius: 15px;
+  box-shadow: 0 0 5px#d32f2f6b;
+}
+
+#jingshenMore:hover {
+  box-shadow: 0 0 10px#d32f2f;
+  width: 102px;
+  height: 41px;
+  font-size: 16.5px;
+}

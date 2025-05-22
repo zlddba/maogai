@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 500px;
+            height: 350px;
+            
+        }
+
+        video {
+          
+        }
+    </style>
+</head>
+<body>
+    <h1>a</h1>
+    <!-- <video src="//www.bilibili.com/blackboard/html5mobileplayer.html?isOutside=true&bvid=BV1ka5TzyEHe&cid=29853027692&p=1&autoplay=0&danmaku=0"></video> -->
+    <!-- <iframe src="//www.bilibili.com/blackboard/html5mobileplayer.html?isOutside=true&bvid=BV1ka5TzyEHe&cid=29853027692&p=1&autoplay=0&danmaku=0" scrolling="no" border="2" frameborder="no" framespacing="0" allowfullscreen="true" id="blvideo"></iframe> -->
+     <iframe src="//www.baidu.com" frameborder="0" style="height: 300px;width: 300px;"></iframe>
+
+    <script>
+        let iframes= document.getElementById("blvideo");
+        
+        Array.from(iframes).forEach(iframe => {
+  // 必须等待 iframe 加载完成
+  iframe.onload = () => {
+    try {
+      // 方法 1：通过 contentDocument
+      const iframeDoc = iframe.contentDocument;
+      
+      // 方法 2：通过 contentWindow.document
+      const iframeDocAlt = iframe.contentWindow.document;
+
+      // 示例：操作 iframe 内的 DOM
+      iframeDoc.querySelector('video').autoplay = false;
+    } catch (e) {
+      console.error('跨域访问被阻止:', e.message);
+    }
+  };
+});
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .discussion-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comment-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-input {
+    flex: 1;
+}
+
+.comment-input textarea {
+    width: 100%;
+    height: 80px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.format-tools {
+    display: flex;
+    gap: 8px;
+}
+
+.format-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.comment-content {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.username {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-time {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.comment-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.like-btn, .reply-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.like-btn:hover, .reply-btn:hover {
+    background: #f5f5f5;
+}
+
+.nested-comments {
+    margin-top: 15px;
+    margin-left: 30px;
+    border-left: 2px solid #eee;
+    padding-left: 15px;
+}
+
+.comment-count {
+    color: #007bff;
+}
+    </style>
+</head>
+<body>
+    <div class="discussion-container">
+        <!-- 讨论标题 -->
+        <h2 class="discussion-title">话题讨论（<span class="comment-count">12</span> 条评论）</h2>
+    
+        <!-- 发表评论表单 -->
+        <div class="comment-form">
+            <div class="user-avatar">
+                <img src="default-avatar.jpg" alt="用户头像">
+            </div>
+            <form class="comment-input">
+                <textarea placeholder="加入讨论..."></textarea>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">发表评论</button>
+                    <div class="format-tools">
+                        <button type="button" class="format-btn">B</button>
+                        <button type="button" class="format-btn">I</button>
+                        <button type="button" class="format-btn">🔗</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+        <!-- 评论列表 -->
+        <div class="comments-list">
+            <!-- 单个评论 -->
+            <div class="comment">
+                <div class="user-avatar">
+                    <img src="user-avatar1.jpg" alt="用户头像">
+                </div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="username">张三</span>
+                        <span class="comment-time">2小时前</span>
+                    </div>
+                    <p class="comment-text">这是一个示例评论内容，这里可以展示用户的发言内容。支持多行文本显示。</p>
+                    <div class="comment-actions">
+                        <button class="like-btn">👍 12</button>
+                        <button class="reply-btn">回复</button>
+                    </div>
+    
+                    <!-- 子评论 -->
+                    <div class="nested-comments">
+                        <div class="comment">
+                            <div class="user-avatar">
+                                <img src="user-avatar2.jpg" alt="用户头像">
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <span class="username">李四</span>
+                                    <span class="comment-time">1小时前</span>
+                                </div>
+                                <p class="comment-text">这是对张三评论的回复内容。</p>
+                                <div class="comment-actions">
+                                    <button class="like-btn">👍 2</button>
+                                    <button class="reply-btn">回复</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussions DIV</title>
+    <link rel="stylesheet" href="discussionsstyle.css" />
+  </head>
+  <body>
+    <div class="scroll-wrapper">
+      <p style="max-height: max-content; margin-bottom: 0;">a</p>
+      <div class="scroll-container">
+        <!-- 你的长内容 -->
+        <div style="height: 800px;">
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <div
+            style="
+              height: 100px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          ></div>
+
+          <!-- endDiv -->
+          <div
+            style="
+              height: 50px;
+              margin: 20px;
+              background-color: aqua;
+              width: 90%;
+            "
+          >a</div>
+        </div>
+
+        
+      </div>
+      <div class="scroll-arrow"></div>
+    </div>
+
+    <script>
+      // 滚动控制
+      const container = document.querySelector(".scroll-container");
+      const arrow = document.querySelector(".scroll-arrow");
+
+      // 点击箭头滚动
+      arrow.addEventListener("click", () => {
+        container.scrollBy({
+          top: 100,
+          behavior: "smooth",
+        });
+      });
+
+      // 自动隐藏箭头
+      container.addEventListener("scroll", () => {
+        const maxScroll = container.scrollHeight - container.clientHeight;
+        arrow.style.opacity = container.scrollTop < maxScroll - 50 ? 1 : 0;
+      });
+    </script>
+  </body>
+</html>

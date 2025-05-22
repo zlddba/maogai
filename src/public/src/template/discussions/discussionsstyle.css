@@ -1,0 +1,96 @@
+/* .discussionsBox {
+    width: 60%;
+    height: 300px;
+    border: 1px solid #c00;
+    border-radius: 30px;
+    overflow-y: auto;
+}
+
+.discussionsTitle {
+    max-width: max-content;
+    max-height: max-content;
+    margin-left: 25px;
+    color: #c00;
+} */
+
+.scroll-wrapper {
+  border: 1px solid #c00;
+  position: relative;
+  width: 300px; /* 容器宽度 */
+  height: 300px; /* 容器高度 */
+  overflow: hidden; /* 隐藏外部溢出 */
+}
+
+.scroll-container {
+  width: calc(100% + 20px); /* 隐藏原生滚动条 */
+  height: 100%;
+  overflow-y: scroll; /* 强制启用滚动 */
+  padding-right: 20px; /* 补偿滚动条宽度 */
+}
+
+/* 隐藏所有浏览器滚动条 */
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+.scroll-container {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+
+  margin-bottom: 20px;
+}
+
+/* 向下箭头指示 */
+.scroll-arrow {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+/* 箭头图标 */
+.scroll-arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+/* 当内容可滚动时显示箭头 */
+.scroll-wrapper:hover .scroll-arrow {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-arrow {
+  display: none; /* 默认移动端隐藏 */
+}
+
+@media (hover: hover) {
+  .scroll-arrow {
+    display: block; /* 仅支持悬停设备显示 */
+  }
+}
+
+.scroll-arrow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.8);
+}

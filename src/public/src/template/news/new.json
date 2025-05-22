@@ -1,0 +1,43 @@
+{
+    "metadata": {
+      "document_id": "article_20240718_001",
+      "version": "1.0",
+      "language": "zh-CN"
+    },
+    "article": {
+      "header": {
+        "title": "",
+        "publish_date": "",
+        "source": {
+          "name": "",
+          "type": ""
+        }
+      },
+      "content": {
+        "structure": [
+          {
+            "type": "image",
+            "order": 1,
+            "path": "",
+            "caption": ""
+          },
+          {
+            "type": "text",
+            "order": 2,
+            "paragraphs": [
+              "",
+              ""
+            ]
+          },
+          {
+            "type": "video",
+            "order": 3,
+            "path": "./video.mp4",
+            "caption": "会议视频记录",
+            "controls": true,
+            "width": 800
+          }
+        ]
+      }
+    }
+  }

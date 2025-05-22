@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国红色文化传承与弘扬</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimSun", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #c00;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-banner {
+            height: 400px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x400/8B0000/FFFFFF?text=红色文化');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 5px solid #c00;
+        }
+        
+        .hero-text {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #c00;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #900;
+        }
+        
+        .section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #c00;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #c00;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .card {
+            width: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #c00;
+        }
+        
+        .card-text {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .card-link {
+            color: #c00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .card-link:hover {
+            text-decoration: underline;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #c00;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 4px solid #c00;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-year {
+            color: #c00;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-text {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        /* 人物展示样式 */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .person-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .person-img {
+            height: 250px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .person-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .person-name {
+            font-size: 20px;
+            color: #c00;
+            margin-bottom: 10px;
+        }
+        
+        .person-title {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        /* 精神展示样式 */
+        .spirit-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .spirit-box {
+            width: 300px;
+            height: 300px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .spirit-box:hover {
+            transform: scale(1.05);
+            background-color: #eee;
+        }
+        
+        .spirit-icon {
+            font-size: 48px;
+            color: #c00;
+            margin-bottom: 20px;
+        }
+        
+        .spirit-title {
+            font-size: 24px;
+            color: #c00;
+            margin-bottom: 15px;
+        }
+        
+        .spirit-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">红色文化传承</div>
+            <p>aa传承红色基因 · 弘扬革命精神</p>
+        </div>
+    </header>
+    
+    <div class="hero-banner">
+        <div class="hero-text">
+            <h1>中国红色文化传播平台</h1>
+            <p>传承红色基因，弘扬革命精神，让红色文化在新时代绽放新光彩</p>
+            <a href="#history" class="btn">探索红色历史</a>
+        </div>
+    </div>
+    
+    <section id="history" class="section">
+        <div class="container">
+            <h2 class="section-title">红色历史</h2>
+            <p>中国共产党百年来的辉煌历程，是中国近现代史上最为可歌可泣的篇章。它镌刻着无数革命先烈的英勇事迹，展现了中国共产党人不懈奋斗的精神风貌。</p>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1921年</div>
+                        <h3>中国共产党成立</h3>
+                        <p>中共一大在上海召开，标志着中国共产党的正式成立，开启了中国革命的新纪元。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1927年</div>
+                        <h3>南昌起义</h3>
+                        <p>南昌起义打响了武装反抗国民党反动派的第一枪，是中国共产党独立领导武装斗争的开始。</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1934-1936年</div>
+                        <h3>长征</h3>
+                        <p>红军长征是中国革命史上的伟大奇迹，展现了中国共产党人坚定的理想信念和顽强的革命意志。</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1949年</div>
+                        <h3>中华人民共和国成立</h3>
+                        <p>新中国成立标志着中国人民从此站起来了，开启了中国历史的新纪元。</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021年</div>
+                        <h3>建党百年</h3>
+                        <p>中国共产党成立100周年，百年辉煌历程，书写了中华民族伟大复兴的壮丽篇章。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="stories" class="section">
+        <div class="container">
+            <h2 class="section-title">红色故事</h2>
+            <p>革命先烈们的英勇事迹和感人故事，是中国共产党百年历史的生动见证，是我们宝贵的精神财富。</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://via.placeholder.com/400x200/8B0000/FFFFFF?text=井冈山精神');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">井冈山的星星之火</h3>
+                        <p class="card-text">井冈山革命根据地的创建，是毛泽东等老一辈革命家开辟的具有中国特色的革命道路，点燃了中国革命的星星之火。</p>
+                        <a href="#" class="card-link">阅读更多 →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://via.placeholder.com/400x200/8B0000/FFFFFF?text=延安精神');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">延安的窑洞明灯</h3>
+                        <p class="card-text">延安时期是中国共产党发展的重要阶段，延安精神是党的宝贵精神财富，激励着一代代中国人。</p>
+                        <a href="#" class="card-link">阅读更多 →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://via.placeholder.com/400x200/8B0000/FFFFFF?text=西柏坡精神');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">西柏坡的胜利曙光</h3>
+                        <p class="card-text">西柏坡是解放战争后期中共中央所在地，这里孕育了西柏坡精神，是中国革命的重要里程碑。</p>
+                        <a href="#" class="card-link">阅读更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="people" class="section">
+        <div class="container">
+            <h2 class="section-title">红色人物</h2>
+            <p>革命先烈和英雄人物是中华民族的脊梁，他们的光辉事迹和崇高精神，是我们永远学习的榜样。</p>
+            
+            <div class="people-grid">
+                <div class="person-card">
+                    <div class="person-img" style="background-image: url('https://via.placeholder.com/400x400/8B0000/FFFFFF?text=毛泽东');"></div>
+                    <div class="person-info">
+                        <h3 class="person-name">毛泽东</h3>
+                        <p class="person-title">中国共产党的主要创始人</p>
+                        <p>中国共产党的主要创始人之一，中国各族人民的伟大领袖，伟大的马克思主义者，伟大的无产阶级革命家、战略家、理论家。</p>
+                    </div>
+                </div>
+                
+                <div class="person-card">
+                    <div class="person-img" style="background-image: url('https://via.placeholder.com/400x400/8B0000/FFFFFF?text=周恩来');"></div>
+                    <div class="person-info">
+                        <h3 class="person-name">周恩来</h3>
+                        <p class="person-title">中华人民共和国总理</p>
+                        <p>中国共产党的主要领导人之一，中华人民共和国的主要领导人，伟大的马克思主义者，杰出的无产阶级革命家。</p>
+                    </div>
+                </div>
+                
+                <div class="person-card">
+                    <div class="person-img" style="background-image: url('https://via.placeholder.com/400x400/8B0000/FFFFFF?text=朱德');"></div>
+                    <div class="person-info">
+                        <h3 class="person-name">朱德</h3>
+                        <p class="person-title">中国人民解放军总司令</p>
+                        <p>中国共产党、中国人民解放军和中华人民共和国的主要领导人之一，伟大的马克思主义者，杰出的无产阶级革命家。</p>
+                    </div>
+                </div>
+                
+                <div class="person-card">
+                    <div class="person-img" style="background-image: url('https://via.placeholder.com/400x400/8B0000/FFFFFF?text=刘少奇');"></div>
+                    <div class="person-info">
+                        <h3 class="person-name">刘少奇</h3>
+                        <p class="person-title">中华人民共和国主席</p>
+                        <p>中国共产党的主要领导人之一，伟大的马克思主义者，杰出的无产阶级革命家、政治家、理论家。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="spirit" class="section">
+        <div class="container">
+            <h2 class="section-title">红色精神</h2>
+            <p>红色精神是中国共产党在长期革命、建设和改革实践中形成的宝贵精神财富，是我们党不断发展壮大的强大动力。</p>
+            
+            <div class="spirit-container">
+                <div class="spirit-box">
+                    <div class="spirit-icon">🔥</div>
+                    <h3 class="spirit-title">革命精神</h3>
+                    <p class="spirit-desc">革命精神是马克思主义革命精神的中国化，是共产党人坚定理想、不怕牺牲、勇往直前的高尚品质。</p>
+                </div>
+                
+                <div class="spirit-box">
+                    <div class="spirit-icon">⚖️</div>
+                    <h3 class="spirit-title">奋斗精神</h3>
+                    <p class="spirit-desc">奋斗精神是共产党人不懈追求、艰苦奋斗、无私奉献的优秀品质，是实现民族复兴的强大动力。</p>
+                </div>
+                
+                <div class="spirit-box">
+                    <div class="spirit-icon">✨</div>
+                    <h3 class="spirit-title">创新精神</h3>
+                    <p class="spirit-desc">创新精神是共产党人与时俱进、开拓创新、勇于探索的宝贵品质，是推动党和国家事业发展的重要力量。</p>
+                </div>
+                
+                <div class="spirit-box">
+                    <div class="spirit-icon">🤝</div>
+                    <h3 class="spirit-title">团结精神</h3>
+                    <p class="spirit-desc">团结精神是共产党人团结协作、众志成城、共同奋斗的优秀品质，是实现国家繁荣昌盛的重要保障。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">红色文化传承平台</div>
+            <div class="footer-links">
+                <a href="#history">红色历史</a>
+                <a href="#stories">红色故事</a>
+                <a href="#people">红色人物</a>
+                <a href="#spirit">红色精神</a>
+                <a href="#">关于我们</a>
+                <a href="#">联系方式</a>
+            </div>
+            <p class="footer-text">© 2023 红色文化传承平台 版权所有</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 简单的图片加载动画
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('.card-img, .person-img');
+            images.forEach(img => {
+                img.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html> 
