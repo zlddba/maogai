@@ -134,3 +134,21 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# 依赖
+node_modules/
+src/node_modules/
+src/node/
+*.mp4
+
+# 日志
+*.log
+logs/
+
+# 编辑器
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
